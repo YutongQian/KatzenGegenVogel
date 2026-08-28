@@ -1,0 +1,11 @@
+asset
+de.katzengegenvogel.backend
+de.katzengegenvogel.dto
+de.katzengegenvogel.frontend
+de.katzengegenvogel.main
+de.katzengegenvogel.middletier
+de.katzengegenvogel.middletier.katze
+de.katzengegenvogel.middletier.katze.behaelter
+de.katzengegenvogel.middletier.katze.werfer
+de.katzengegenvogel.middletier.stelle
+de.katzengegenvogel.middletier.vogel
