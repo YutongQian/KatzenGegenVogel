@@ -81,7 +81,9 @@ public class SpielScene implements SceneInter {
 
     private double mouseMovedX;
     private double mouseMovedY;
-    private int jetztLevel ;
+    private int jetztLevel = 1;
+    /** Label mit der aktuellen Levelnummer; wird in loadLevel() aktualisiert. */
+    private Label levelText;
 
 
     private Scene spielScene;
@@ -137,7 +139,7 @@ public class SpielScene implements SceneInter {
 
         content = canvas.getGraphicsContext2D();
 //        root.getChildren().addAll(hintergrund,canvas);
-        Label levelText = new Label("Level " + jetztLevel);
+        levelText = new Label("Level " + jetztLevel);
         StackPane.setAlignment(levelText, Pos.TOP_CENTER);
         StackPane.setMargin(levelText,new Insets(15,0,0,0));
         levelText.setStyle(
@@ -605,6 +607,11 @@ public class SpielScene implements SceneInter {
 
         if (gameTimer != null) {
             gameTimer.start();
+        }
+
+        // Levelanzeige aktualisieren, damit nicht dauerhaft "Level 0" steht
+        if (levelText != null) {
+            levelText.setText("Level " + jetztLevel);
         }
 
         System.out.println("Level " + level + " geladen.");

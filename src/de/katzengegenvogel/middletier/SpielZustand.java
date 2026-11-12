@@ -220,6 +220,9 @@ public class SpielZustand {
     public Katze einsetzenKazte(String stelleName, String katzeTypeName) {
 
         Class<? extends Katze> katzeName = katzenTypen.get(katzeTypeName);
+        if (katzeName == null) {
+            throw new IllegalArgumentException("Unbekannter Katzentyp: " + katzeTypeName);
+        }
 
         try {
             Katze katze = katzeName.getDeclaredConstructor().newInstance();
@@ -228,6 +231,9 @@ public class SpielZustand {
                 return null;
             }
             Stelle stelle = spielStelle.get(stelleName);
+            if (stelle==null){
+                throw new IllegalArgumentException("Unbekanntes Feld:"+stelleName);
+            }
 
 
 

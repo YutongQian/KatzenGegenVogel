@@ -29,16 +29,16 @@ public class KatzeSpielTest {
 
         VogelNest neuNest=new VogelNest(plan);
         SpielZustand neuSpiel=new SpielZustand(neuNest,katzeType,dimension,originalFutter);
-        neuSpiel.einsetzenKazte("1feld6","WerferKatze");
-        neuSpiel.einsetzenKazte("0feld5","WerferKatze");
-        neuSpiel.einsetzenKazte("1feld7", "HungerKatze");
-        neuSpiel.einsetzenKazte("0feld7","WerferKatze");
-        neuSpiel.einsetzenKazte("0feld8","WerferKatze");
-        neuSpiel.einsetzenKazte("1feld8","WerferKatze");
-        neuSpiel.einsetzenKazte("1feld5","WerferKatze");
-        neuSpiel.einsetzenKazte("0feld6","WerferKatze");
-        neuSpiel.einsetzenKazte("0feld4","HarvesterKatze");
-        neuSpiel.einsetzenKazte("1feld4","HarvesterKatze");
+        neuSpiel.einsetzenKazte("1Feld6","WerferKatze");
+        neuSpiel.einsetzenKazte("0Feld5","WerferKatze");
+        neuSpiel.einsetzenKazte("1Feld7", "HungerKatze");
+        neuSpiel.einsetzenKazte("0Feld7","WerferKatze");
+        neuSpiel.einsetzenKazte("0Feld8","WerferKatze");
+        neuSpiel.einsetzenKazte("1Feld8","WerferKatze");
+        neuSpiel.einsetzenKazte("1Feld5","WerferKatze");
+        neuSpiel.einsetzenKazte("0Feld6","WerferKatze");
+        neuSpiel.einsetzenKazte("0Feld4","HarvesterKatze");
+        neuSpiel.einsetzenKazte("1Feld4","HarvesterKatze");
 
         neuSpiel.simulieren();
 
