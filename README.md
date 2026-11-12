@@ -15,6 +15,7 @@ wenn alle Wellen abgewehrt sind, verloren, wenn Vögel das Raster durchbrechen.
 - **Serialisierung** (`java.io.Serializable`) zur Persistenz der Spielerdaten
 - **Eigene Exception-Klassen** zur Steuerung des Spielendes
 - JavaDoc für öffentliche Klassen und Methoden, Git für die Versionsverwaltung
+- **Maven** als Build-Werkzeug (`javafx-maven-plugin`, JUnit 5 via Surefire)
 
 ## Architektur
 
@@ -134,9 +135,23 @@ automatisierten Tests liegen in `test/de/katzengegenvogel/middletier/SpielZustan
 
 ## Starten
 
-1. JDK 17 oder neuer und ein JavaFX-SDK (oder IntelliJ mit JavaFX-Unterstützung)
-2. Projekt in IntelliJ öffnen und JavaFX als Library einbinden
-3. `de.katzengegenvogel.main.SpielApp` starten
+Voraussetzung: **JDK 21** oder neuer.
+
+### Mit Maven (empfohlen)
+
+```bash
+mvn javafx:run     # Anwendung starten
+mvn test           # Tests ausführen
+mvn package        # JAR bauen
+```
+
+JavaFX wird von Maven automatisch in der zum Betriebssystem passenden Variante geladen
+(z. B. `mac-aarch64`). Ein manuell installiertes JavaFX-SDK ist damit nicht mehr nötig.
+
+### In IntelliJ IDEA
+
+1. Projekt öffnen – IDEA erkennt die `pom.xml` und lädt sie als Maven-Projekt
+2. `de.katzengegenvogel.main.SpielApp` starten (oder im Maven-Fenster `javafx:run`)
 
 ## Tests
 
@@ -152,8 +167,7 @@ Automatisierte Tests mit **JUnit 5** für die Spiellogik
 | `feldnameIstGrossgeschrieben` | Felder heißen `"1Feld6"`, nicht `"1feld6"` (dokumentiert eine Falle) |
 | `simulierenLaeuftOhneFehler` | Ein Simulationsschritt auf frischem Spiel läuft durch |
 
-Ausführen in IntelliJ: Ordner `test/` als **Test Sources Root** markieren, JUnit 5 zum
-Classpath hinzufügen, dann `SpielZustandTest` starten.
+Ausführen: `mvn test` – oder in IntelliJ direkt die Klasse `SpielZustandTest` starten.
 
 ## Bekannte Grenzen
 
