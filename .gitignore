@@ -32,3 +32,6 @@ bin/
 *.iml
 doc/
 *.zip
+
+# Maven
+target/
