@@ -27,3 +27,8 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+# IntelliJ / generierte Artefakte
+.idea/
+*.iml
+doc/
+*.zip
